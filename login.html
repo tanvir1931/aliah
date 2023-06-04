@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Custom styling for the form */
+        body {
+            background-color: silver;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container .btn {
+            margin-top: 10px;
+        }
+
+        .form-container .btn-login {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+        }
+
+        .form-container .btn-login:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary btn-block btn-login">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript code to handle form submission and database simulation
+        $(document).ready(function () {
+            // Form submission
+            $('#login-form').submit(function (e) {
+                e.preventDefault();
+                var email = $('#email').val();
+                var password = $('#password').val();
+
+                // Simulating login authentication (you would typically use a server-side technology and a database)
+                var user = {
+                    email: email,
+                    password: password
+                };
+
+                // Simulating login authentication
+                var authenticatedUser = authenticateUser(user);
+
+                if (authenticatedUser) {
+                    alert("Login successful!");
+                    // Perform necessary actions after successful login
+                } else {
+                    alert("Invalid email or password!");
+                }
+
+                // Reset the form fields
+                $('#email').val('');
+                $('#password').val('');
+            });
+
+            // Simulated function to authenticate user
+            function authenticateUser(user) {
+                // Here you can perform AJAX request or any other server-side logic to authenticate the user
+                // For demonstration purposes, we are assuming a static user with predefined credentials
+                var validEmail = 'example@example.com';
+                var validPassword = 'password';
+
+                if (user.email === validEmail && user.password === validPassword) {
+                    return true;
+                }
+
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>

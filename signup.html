@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Custom styling for the form */
+        body {
+            background-color: silver;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container .btn {
+            margin-top: 10px;
+        }
+
+        .form-container .btn-signup {
+            background-color: #28a745;
+            border-color: #28a745;
+            color: #fff;
+        }
+
+        .form-container .btn-signup:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2>Sign Up</h2>
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password" required>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-success btn-block btn-signup">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="text-center">Already have an account? <a href="login.html">Click here to log in</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript code to handle form submission and database simulation
+        $(document).ready(function () {
+            // Form submission
+            $('#signup-form').submit(function (e) {
+                e.preventDefault();
+                var username = $('#username').val();
+                var password = $('#password').val();
+                var confirmPassword = $('#confirm-password').val();
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                // Simulating database storage (you would typically use a server-side technology and a database)
+                var user = {
+                    username: username,
+                    password: password
+                };
+
+                // Save user data to the "database"
+                saveUser(user);
+
+                alert("User registration successful!");
+
+                // Reset the form fields
+                $('#username').val('');
+                $('#password').val('');
+                $('#confirm-password').val('');
+            });
+
+            // Simulated function to save user data to the "database"
+            function saveUser(user) {
+                // Here you can perform AJAX request or any other server-side logic to save the user data
+                console.log("User data saved to database:", user);
+            }
+        });
+    </script>
+</body>
+</html>
