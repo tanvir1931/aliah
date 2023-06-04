@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>International Student Admission Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input[type="checkbox"] {
+      width: auto;
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 480px) {
+      .form-group {
+        margin-bottom: 10px;
+      }
+
+      .form-group input,
+      .form-group select {
+        padding: 8px;
+      }
+
+      .form-group button {
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>International Student Admission Form</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" required>
+      </div>
+
+      <div class="form-group">
+        <label for="passportNumber">Passport Number:</label>
+        <input type="text" id="passportNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label for="countryOfResidence">Country of Residence:</label>
+        <input type="text" id="countryOfResidence" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label for="currentInstitution">Name of Current Institution:</label>
+        <input type="text" id="currentInstitution" required>
+      </div>
+
+      <div class="form-group">
+        <label for="programOfStudy">Program/Field of Study:</label>
+        <input type="text" id="programOfStudy" required>
+      </div>
+
+      <div class="form-group">
+        <label for="expectedGraduation">Expected Year of Graduation:</label>
+        <input type="text" id="expectedGraduation" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gpa">GPA/Percentage:</label>
+        <input type="text" id="gpa" required>
+      </div>
+
+      <div class="form-group">
+        <label for="englishProficiency">English Language Proficiency:</label>
+        <input type="text" id="englishProficiency" required>
+      </div>
+
+      <div class="form-group">
+        <label for="intendedProgram">Intended Program/Field of Study:</label>
+        <input type="text" id="intendedProgram" required>
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">Preferred Start Date:</label>
+        <input type="date" id="startDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="previousApplication">Have you applied to our institution before?</label>
+        <input type="text" id="previousApplication" required>
+      </div>
+
+      <div class="form-group">
+        <label for="financialAid">Are you applying for financial aid/scholarships?</label>
+        <input type="checkbox" id="financialAid">
+      </div>
+
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    function submitForm() {
+      // Get form values and perform form validation
+      // ...
+
+      // Create an object with form data
+      var formData = {
+        fullName: document.getElementById("fullName").value,
+        dob: document.getElementById("dob").value,
+        gender: document.getElementById("gender").value,
+        nationality: document.getElementById("nationality").value,
+        passportNumber: document.getElementById("passportNumber").value,
+        countryOfResidence: document.getElementById("countryOfResidence").value,
+        email: document.getElementById("email").value,
+        phoneNumber: document.getElementById("phoneNumber").value,
+        currentInstitution: document.getElementById("currentInstitution").value,
+        programOfStudy: document.getElementById("programOfStudy").value,
+        expectedGraduation: document.getElementById("expectedGraduation").value,
+        gpa: document.getElementById("gpa").value,
+        englishProficiency: document.getElementById("englishProficiency").value,
+        intendedProgram: document.getElementById("intendedProgram").value,
+        startDate: document.getElementById("startDate").value,
+        previousApplication: document.getElementById("previousApplication").value,
+        financialAid: document.getElementById("financialAid").checked
+      };
+
+      // Perform further processing or send the data to the server
+      console.log(formData);
+    }
+  </script>
+</body>
+</html>
